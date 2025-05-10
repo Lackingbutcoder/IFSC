@@ -7,7 +7,8 @@ class searchIFSC{
             BufferedReader ifsc_reader = new BufferedReader(new FileReader("ifsc.txt"));
             BufferedReader bank_reader = new BufferedReader(new FileReader("bankname.txt"));
             BufferedReader branch_reader = new BufferedReader(new FileReader("branch.txt"));
-            BufferedReader state_reader = new BufferedReader(new FileReader("state.txt"));){
+            BufferedReader state_reader = new BufferedReader(new FileReader("state.txt"));
+            BufferedReader address_reader = new BufferedReader(new FileReader("address.txt"));){
 
             System.out.println("Enter the IFSC code: ");
             String ifsc_code = scanner.nextLine();
@@ -32,10 +33,12 @@ class searchIFSC{
                         String bank_line = bank_reader.readLine();
                         String branch_line = branch_reader.readLine();
                         String state_line = state_reader.readLine();
+                        String address_line = address_reader.readLine();
                         if(i==line_num){
                             System.out.println("Bank name: " + (bank_line != null ? bank_line : "Bank not found"));
                             System.out.println("Branch name: " + (branch_line != null ? branch_line : "Branch not found"));
                             System.out.println("State name: " + (state_line != null ? state_line : "State not found"));
+                            System.out.println("Address: " + (address_line != null ? address_line : "Address not found"));
                         }
                     }
                 }
